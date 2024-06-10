@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'alten-angular';
+
+  public handleLimitReached(n: number): void{
+    console.log("raggiunto il numero " + n);
+  }
+  public handleClick(): void{
+    this.title = "ciao"
+  }
 }
