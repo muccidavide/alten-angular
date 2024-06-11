@@ -1,0 +1,13 @@
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <app-user-list-row *ngFor="let userSelected of userList" (deleteUser)="handleDelete($event)" [user]="userSelected"></app-user-list-row>
+    </tbody>
+</table>

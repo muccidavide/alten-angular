@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
@@ -6,7 +6,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./counter.component.sass']
 })
 export class CounterComponent {
-  public counter: number = 0;
+  @Input() public counter: number = 0;
   @Output() public limitReached: EventEmitter<number> = new EventEmitter();
 
   public handleCounter(isSum = true): void {
