@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserListRowComponent } from './components/user-list-row/user-list-row.component';
+import { FormsModule } from '@angular/forms';
+import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterComponent,
     UserListComponent,
-    UserListRowComponent
+    UserListRowComponent,
+    RegistrationFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

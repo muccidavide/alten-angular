@@ -12,9 +12,6 @@ export class UserListComponent {
   ];
 
   handleDelete(user: User): void {
-    console.log("PRE", this.userList.length);
-    
-    this.userList = this.userList.filter(x => x != user);
-    console.log("POST", this.userList.length);
+    this.userList.splice(this.userList.indexOf(user), 1);
   }
 }

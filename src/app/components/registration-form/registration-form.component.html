@@ -1,0 +1,43 @@
+<form class="container" (ngSubmit)="handleSubmit(f)" #f="ngForm">
+    <div class="mb-3">
+        <label for="username">Username:</label>
+        <input id="username" type="text" name="username" required minlength="6" [(ngModel)]="username" #e="ngModel">
+        <div *ngIf="e.invalid && (e.touched || f.submitted)">
+            <p *ngIf="e.hasError('required')">Il campo è obbligatorio</p>
+            <p *ngIf="e.hasError('minlength')">Il campo deve essere lungo almeno 5 caratteri</p>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required [(ngModel)]="email" #em="ngModel">
+        <div *ngIf="em.invalid && (em.touched || f.submitted)">
+            <p *ngIf="em.hasError('required')">Il campo è obbligatorio</p>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="8" [(ngModel)]="password" #p="ngModel">
+        <div *ngIf="p.invalid && (p.touched || f.submitted)">
+            <p *ngIf="p.hasError('required')">Il campo è obbligatorio</p>
+            <p *ngIf="p.hasError('minlength')">Il campo deve essere lungo almeno 8 caratteri</p>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="age">Età:</label>
+        <input type="number" id="age" name="age" required min="18" [(ngModel)]="age" #a="ngModel">
+        <div *ngIf="a.invalid && (a.touched || f.submitted)">
+            <p *ngIf="a.hasError('required')">Il campo è obbligatorio</p>
+            <p *ngIf="a.hasError('minlength')">Devi avere più di 18 anni</p>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="policy">Policy:</label>
+        <input type="checkbox" id="policy" name="policy" required [(ngModel)]="policy" #po="ngModel">
+        <div *ngIf="po.invalid && (po.touched || f.submitted)">
+            <p *ngIf="!po.value" >Il campo è obbligatorio</p>
+        </div>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
