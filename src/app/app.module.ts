@@ -9,6 +9,7 @@ import { UserListRowComponent } from './components/user-list-row/user-list-row.c
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
     UserListComponent,
     UserListRowComponent,
     RegistrationFormComponent, 
-    ReactiveFormComponent
+    ReactiveFormComponent, HighlightDirective
   ],
   imports: [
     BrowserModule,
