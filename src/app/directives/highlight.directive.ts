@@ -11,6 +11,10 @@ export class HighlightDirective {
 
   @HostListener('click')
   public highlight(): void {
+    if(this._elRef.nativeElement.style.backgroundColor == 'yellow'){
+      this._elRef.nativeElement.style.removeProperty('background-color');
+      return;
+    }
     this._elRef.nativeElement.style.backgroundColor = 'yellow';
   }
 
