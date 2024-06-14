@@ -16,13 +16,13 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
     CounterComponent,
     UserListComponent,
     UserListRowComponent,
-    RegistrationFormComponent,
+    RegistrationFormComponent, 
     ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    FormsModule, 
     ReactiveFormsModule
   ],
   providers: [],

@@ -1,8 +1,45 @@
-<form [formGroup]="form" (ngSubmit)="handleSubmit()">
-    <label for="email">email</label>
-    <input type="email" id="email" name="email" formControlName="email">
-    <div *ngIf="form.get('email')?.errors && (form.get('email')?.touched || isSubmitted )">
-        <p *ngIf="email.hasError('required')">Campo richiesto</p>
-        <p *ngIf="email.hasError('email')">Deve essere un email</p>
+<form [formGroup]="form" (ngSubmit)="handleSubmit()" >
+    <div class="mb-3">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" formControlName="email">
+        <div *ngIf="form.get('email')?.errors && (form.get('email')?.touched || isSubmitted )">
+            <p *ngIf="email.hasError('required')">Campo richiesto</p>
+            <p *ngIf="email.hasError('email')">Deve essere un email</p>
+            <p *ngIf="email.hasError('forbidden')">Email non valida</p>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="username">Username:</label>
+        <input type="username" id="username" name="username" formControlName="username">
+        <div *ngIf="username.errors && (form.get('username')?.touched || isSubmitted )">
+            <p *ngIf="username.hasError('required')">Campo richiesto</p>
+            <p *ngIf="username.hasError('minlength')">Minimo 5 caratteri</p>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" formControlName="password">
+        <div *ngIf="password.errors && (form.get('password')?.touched || isSubmitted )">
+            <p *ngIf="password.hasError('required')">Campo richiesto</p>
+            <p *ngIf="password.hasError('minlength')">Minimo 8 caratteri</p>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" formControlName="age">
+        <div *ngIf="age.errors && (form.get('age')?.touched || isSubmitted )">
+            <p *ngIf="age.hasError('required')">Campo richiesto</p>
+            <p *ngIf="age.hasError('min')">Minimo 18 anni</p>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="policy">policy:</label>
+        <input type="checkbox" id="policy" name="policy" formControlName="policy">
+        <div *ngIf="policy.errors && (form.get('policy')?.touched || isSubmitted )">
+            <p *ngIf="policy.hasError('required')">Campo richiesto</p>
+        </div>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
     </div>
 </form>
