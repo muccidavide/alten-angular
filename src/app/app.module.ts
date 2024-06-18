@@ -21,6 +21,8 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { RangeValidatorDirective } from './directives/range-validator.directive';
 import { UserService } from './services/user.service';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HomeComponent } from './components/home/home.component';
 
 //Services
 
@@ -36,7 +38,9 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
     HighlightDirective, 
     UserListComponent,
     UserListRowComponent,
-    TodoListComponent
+    TodoListComponent,
+    NotFoundComponent,
+    HomeComponent
   ],
   imports: [
     AppRoutingModule,
