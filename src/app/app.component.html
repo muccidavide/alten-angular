@@ -3,14 +3,34 @@
     <!-- <h1 style="background-color: aqua;" appHighlight color="green">Alten</h1> -->
 
     <!-- @Input('appHighlight') color!:string; -->
-    <h1 style="background-color: aqua;" appHighlight="green">Alten</h1>
+    <!-- <h1 style="background-color: aqua;" appHighlight="green">Alten</h1> -->
 
-    <div class="row row-cols-2">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['users']">Users</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['todos']">Tddos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container">
       <!--   <div><app-registration-form></app-registration-form></div>
         <div><app-reactive-form></app-reactive-form></div> -->
 
         <div>
-            <app-todo-list></app-todo-list>
+          <router-outlet></router-outlet>
         </div>
     </div>
 
