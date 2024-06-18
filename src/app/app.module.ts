@@ -20,6 +20,7 @@ import { ForbiddenValidatorDirective } from './directives/forbidden-validator.di
 import { HighlightDirective } from './directives/highlight.directive';
 import { RangeValidatorDirective } from './directives/range-validator.directive';
 import { UserService } from './services/user.service';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
 
 //Services
 
@@ -34,7 +35,8 @@ import { UserService } from './services/user.service';
     ReactiveFormComponent, 
     HighlightDirective, 
     UserListComponent,
-    UserListRowComponent
+    UserListRowComponent,
+    TodoListComponent
   ],
   imports: [
     AppRoutingModule,

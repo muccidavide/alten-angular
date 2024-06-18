@@ -25,7 +25,7 @@
     </div>
     <div class="mb-3">
         <label for="age">Età:</label>
-        <input type="number" id="age" name="age" required [appRangeValidator]="[18,100]" [(ngModel)]="age" #a="ngModel">
+        <input type="number" id="age" name="age" required [appRangeValidator]="{min:18, max:100}" [(ngModel)]="age" #a="ngModel">
         <div *ngIf="a.invalid && (a.touched || f.submitted)">
             <p *ngIf="a.hasError('required')">Il campo è obbligatorio</p>
             <p *ngIf="a.hasError('range')">Devi avere più di 18 anni e meno di 100</p>
