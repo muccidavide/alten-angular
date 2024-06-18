@@ -1,11 +1,11 @@
 <form [formGroup]="form" (ngSubmit)="handleSubmit()" >
     <div class="mb-3">
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" formControlName="email">
+        <input type="email" id="email" name="email" formControlName="email" [appForbiddenValidator]="['prova@email.com', 'prova2@email.com']">
         <div *ngIf="form.get('email')?.errors && (form.get('email')?.touched || isSubmitted )">
             <p *ngIf="email.hasError('required')">Campo richiesto</p>
             <p *ngIf="email.hasError('email')">Deve essere un email</p>
-            <p *ngIf="email.hasError('forbidden')">Email non valida</p>
+            <p *ngIf="email.hasError('forbidden')">Email di prova non valida</p>
         </div>
     </div>
     <div class="mb-3">

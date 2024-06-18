@@ -1,32 +1,54 @@
+// Core
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule} from '@angular/common/http'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+//Modules
 import { AppRoutingModule } from './app-routing.module';
+
+// Components
 import { AppComponent } from './app.component';
 import { CounterComponent } from './components/counter/counter.component';
-import { UserListComponent } from './components/user-list/user-list.component';
-import { UserListRowComponent } from './components/user-list-row/user-list-row.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { UserListRowComponent } from './components/user-list-row/user-list-row.component';
+
+// Directive
+import { ForbiddenValidatorDirective } from './directives/forbidden-validator.directive';
 import { HighlightDirective } from './directives/highlight.directive';
+import { RangeValidatorDirective } from './directives/range-validator.directive';
+import { UserService } from './services/user.service';
+
+//Services
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterComponent,
-    UserListComponent,
-    UserListRowComponent,
+    ForbiddenValidatorDirective, 
     RegistrationFormComponent, 
-    ReactiveFormComponent, HighlightDirective
+    RangeValidatorDirective,
+    ReactiveFormComponent, 
+    HighlightDirective, 
+    UserListComponent,
+    UserListRowComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     FormsModule, 
+    HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: UserService, 
+      useClass: UserService, 
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

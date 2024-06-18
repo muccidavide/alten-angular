@@ -1,4 +1,13 @@
 <div class="container mt-3">
-    <h1 appHighlight>Alten</h1>
-    <app-reactive-form></app-reactive-form>
+    <!-- <h1 style="background-color: aqua;" appHighlight [color]="'green'">Alten</h1> -->
+    <!-- <h1 style="background-color: aqua;" appHighlight color="green">Alten</h1> -->
+
+    <!-- @Input('appHighlight') color!:string; -->
+    <h1 style="background-color: aqua;" appHighlight="green">Alten</h1>
+
+    <div class="row row-cols-2">
+        <div><app-registration-form></app-registration-form></div>
+        <div><app-reactive-form></app-reactive-form></div>
+    </div>
+
 </div>

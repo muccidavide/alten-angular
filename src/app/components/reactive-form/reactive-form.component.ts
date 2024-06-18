@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NumberValidators } from 'src/app/validators/number.validators';
 import { StringValidators } from 'src/app/validators/string.validators';
+
 
 @Component({
   selector: 'app-reactive-form',
@@ -10,10 +12,10 @@ import { StringValidators } from 'src/app/validators/string.validators';
 export class ReactiveFormComponent {
 
   public form : FormGroup = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email, StringValidators.forbidden('admin@email.com', 'my@email.com')]),
+    email: new FormControl('', [Validators.required, Validators.email]),
     username: new FormControl('', [Validators.required, Validators.minLength(5)]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-    age: new FormControl(18, [Validators.required, Validators.min(18)]),
+    age: new FormControl(18, [Validators.required, NumberValidators.range(18,100)]),
     policy: new FormControl(false, Validators.requiredTrue)
   })
 
