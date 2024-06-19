@@ -13,13 +13,23 @@ export class TodoService {
 
   public list(): Observable<Todo[]>{
     return this._http.get<ITodo[]>('https://jsonplaceholder.typicode.com/todos').pipe(
-      map(td => td.map(td => new Todo(td.id, td.userId, td.title, td.completed)))
+      map(td => td.map(this.objToModel))
     )
   }
 
   public getTodosByUser(id:number): Observable<Todo[]>{
     return this._http.get<ITodo[]>(`https://jsonplaceholder.typicode.com/users/${id}/todos`).pipe(
-      map(td => td.map(td => new Todo(td.id, td.userId, td.title, td.completed)))
+      map(td => td.map(this.objToModel))
     );
   }
+
+  public objToModel = (todo:ITodo) : Todo => new Todo(todo.id, todo.userId, todo.title, todo.completed);
+  
+/*
+     public x = (todos:ITodo[]) : Todo[] => 
+    todos.map(todo => this.objToModel(todo));
+*/
+  // Semplificata => 
+  public objsToModels = (todos:ITodo[]) : Todo[] => 
+    todos.map(this.objToModel);
 }

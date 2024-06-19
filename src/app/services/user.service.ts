@@ -13,14 +13,17 @@ export class UserService {
 
   public list(): Observable<User[]>{
     return this._http.get<IUser[]>('https://jsonplaceholder.typicode.com/users').pipe(
-      map(users => users.map(user => new User(user.id, user.email, user.username))));
+      map(this.objsToModels));
   }
 
   public getUserById(id: number): Observable<User>{
     return this._http.get<IUser>(`https://jsonplaceholder.typicode.com/users/${id}`).pipe(
-      map(user => new User(user.id, user.email, user.username))
-    )
+      map(this.objToModel))
   }
+
+  public objToModel = (user:IUser): User => new User(user.id, user.email, user.username)   
+
+  public objsToModels = (users:IUser[]): User[] => users.map(this.objToModel);
 
    
 }
