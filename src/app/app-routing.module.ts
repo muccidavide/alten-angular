@@ -5,6 +5,7 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
+import { UserTodoComponent } from './components/user-todo/user-todo.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     component: UserListComponent,
     path: 'users'
+  },
+  {
+    component: UserTodoComponent,
+    path: 'users/:id/todo'
   },
   {
     component: UserInfoComponent,

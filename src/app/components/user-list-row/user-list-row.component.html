@@ -2,6 +2,7 @@
 <td>{{ user.username }}</td>
 <td>{{ user.email }}</td>
 <td>
-    <button (click)="handleDelete()">Delete</button>
-    <a class="btn bbtn-primary" [routerLink]="['/users', user.id]">Info</a>
+    <a class="btn btn-primary d-inline-block me-3" [routerLink]="['/users', user.id]">Info</a>
+    <a class="btn btn-primary me-3" [routerLink]="['/users', user.id, 'todo']">Todos</a>
+    <button class="btn btn-danger" (click)="handleDelete()">Delete</button>
 </td>

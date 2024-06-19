@@ -24,6 +24,7 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
+import { UserTodoComponent } from './components/user-todo/user-todo.component';
 
 //Services
 
@@ -42,7 +43,8 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
     TodoListComponent,
     NotFoundComponent,
     HomeComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    UserTodoComponent
   ],
   imports: [
     AppRoutingModule,

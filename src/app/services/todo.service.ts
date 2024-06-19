@@ -16,4 +16,10 @@ export class TodoService {
       map(td => td.map(td => new Todo(td.id, td.userId, td.title, td.completed)))
     )
   }
+
+  public getTodosByUser(id:number): Observable<Todo[]>{
+    return this._http.get<ITodo[]>(`https://jsonplaceholder.typicode.com/users/${id}/todos`).pipe(
+      map(td => td.map(td => new Todo(td.id, td.userId, td.title, td.completed)))
+    );
+  }
 }
