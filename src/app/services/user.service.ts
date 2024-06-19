@@ -15,4 +15,13 @@ export class UserService {
     return this._http.get<IUser[]>('https://jsonplaceholder.typicode.com/users').pipe(
       map(users => users.map(user => new User(user.id, user.email, user.username))));
   }
+
+  public getUserById(id: number): Observable<User>{
+    return this._http.get<IUser>(`https://jsonplaceholder.typicode.com/users/${id}`).pipe(
+      map(user => new User(user.id, user.email, user.username))
+    )
+  }
+
+   
 }
+
